@@ -130,15 +130,15 @@
                 
 			}
         $(window).on('load', function () {
+        loader.hide();
         init();
+        $( "#videoCover" ).delay(globalDelay*2).fadeOut("slow");
                     function videoLoading() {
         videoEl.play();
         }
         setTimeout(videoLoading, globalDelay*3); 
-        $( "#videoCover" ).fadeOut("slow");
         $(".masked_text").css('top','0');
                             $('.pageload-overlay-back').hide();
-                loader.hide();
             
         });
         </script>
