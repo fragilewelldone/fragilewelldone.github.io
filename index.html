@@ -58,7 +58,7 @@
        </div>
 			</div><!-- /pageload-overlay -->
         <img src="css/img/preview.png" id="videoCover">
-        <video muted plays-inline id="videoBackground">
+        <video preload="auto" muted plays-inline id="videoBackground">
             <source src="background.webm" type="video/webm">
         </video>
         
@@ -78,15 +78,7 @@
         function videoLoading() {
         videoEl.play();
         }
-        </script>
-        
-        <script>
-        //загрузка
-        $(function(){
-         $(window).load(function(){
-        $( "#videoCover" ).delay(globalDelay).fadeOut("slow");
-              });   
-        });
+        setTimeout(videoLoading, globalDelay*3); 
         </script>
         
         	<script src="js/anime.min.js"></script>
@@ -95,25 +87,16 @@
 		<script src="js/svgLoader.js"></script>
 		<script> 
             //это лоадер
-			(function() {
 								var pageWrap = document.getElementById( 'pagewrap' ),
 					pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
 					loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
                 loader.show();
-                        setTimeout( function() {
-                                $('.pageload-overlay-back').hide();
-								loader.hide();
-							}, globalDelay );
-			})();
 		</script>
         
         <script>
-		(function() {
-            	setTimeout(init, globalDelay);
-
+            
 			function init() {
 				//************************ Example 1 - reveal on load ********************************
-				$(".masked_text").css('top','0');
 				var rev1 = new RevealFx(document.querySelector('#rev-1'), {
 					revealSettings : {
 						bgcolor: '#ffffff',
@@ -150,7 +133,13 @@
 				rev3.reveal();
                 
 			}
-		})();
-		</script>
+        $(window).on('load', function () {
+        init();
+        $( "#videoCover" ).fadeOut("slow");
+        $(".masked_text").css('top','0');
+                            $('.pageload-overlay-back').hide();
+                loader.hide();
+        });
+        </script>
     </body>
 </html>
