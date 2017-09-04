@@ -75,10 +75,6 @@
         }, false);
 
         // даем задержку на воспроизведение видео 
-        function videoLoading() {
-        videoEl.play();
-        }
-        setTimeout(videoLoading, globalDelay*3); 
         </script>
         
         	<script src="js/anime.min.js"></script>
@@ -135,10 +131,15 @@
 			}
         $(window).on('load', function () {
         init();
+                    function videoLoading() {
+        videoEl.play();
+        }
+        setTimeout(videoLoading, globalDelay*3); 
         $( "#videoCover" ).fadeOut("slow");
         $(".masked_text").css('top','0');
                             $('.pageload-overlay-back').hide();
                 loader.hide();
+            
         });
         </script>
     </body>
