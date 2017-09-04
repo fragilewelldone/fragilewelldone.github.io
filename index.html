@@ -129,17 +129,19 @@
 				rev3.reveal();
                 
 			}
+            
+                function videoLoading() {
+                videoEl.play();
+        }
+                function back_fade_loading() {
+                $( "#videoCover" ).fadeOut("slow");
+        }
+            
         $(window).on('load', function () {
         loader.hide();
         init();
-                    function videoLoading() {
-        videoEl.play();
-        }
-                               function back_fade_loading() {
-                $( "#videoCover" ).fadeOut("slow");
-        }
-        setTimeout(videoLoading, globalDelay); 
-        setTimeout(back_fade_loading, globalDelay*3); 
+        setTimeout(videoLoading, globalDelay*3); 
+        setTimeout(back_fade_loading, globalDelay*2); 
         $(".masked_text").css('top','0');
                             $('.pageload-overlay-back').hide();
             
