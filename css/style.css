@@ -1,0 +1,291 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+    transition: all 0.3s ease-out ;
+}
+
+@font-face {
+    font-family: 'solomon_black';
+    src: url('fonts/solomon_sans_black.woff2') format('woff2'),
+         url('fonts/solomon_sans_black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'solomon_bold';
+    src: url('fonts/solomon_sans_bold-webfont.woff2') format('woff2'),
+         url('fonts/solomon_sans_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html{
+  height:100%; 
+}
+body {    
+  padding: 0;
+    margin:0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #6800F2;
+  background-attachment: fixed;
+  background-size: cover;
+    color:#fff;
+    position:relative;
+    height:100%;
+}
+h1{
+    overflow: hidden;
+    position:relative;
+    margin-bottom:20px;
+    padding:0;
+    font-family:'solomon_black';
+    font-size:62px;
+    line-height: 60px;
+}
+.animateLine{
+    display:inline-block;
+}
+
+
+/* The only rule that matters */
+#videoBackground, #videoCover {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+#videoCover{
+    z-index:-99;
+}
+@media (min-aspect-ratio: 16/9) {
+    #videoBackground, #videoCover {
+        height: 300%;
+        top: -100%;
+    }
+}
+ 
+@media (max-aspect-ratio: 16/9) {
+    #videoBackground, #videoCover {
+        width: 300%;
+        left: -100%;
+    }
+}
+ 
+@supports (object-fit: cover) {
+    #videoBackground, #videoCover {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.container-fluid {
+        box-sizing: border-box;
+    position: relative;
+    padding:4%;
+    height:100%;
+    width: 100%;
+}
+.flex-container{
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.headerFlex{
+    height:10%;
+    align-items: center;
+}
+.contentFlex{
+        height:90%;
+}
+.columnFlex{
+        height:100%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:0;
+        align-items: flex-start;
+}
+.col{
+    width: 100%;
+    min-height: 1px;
+}
+
+
+.counterDesign{
+    display:block;
+    margin:0;
+    text-align: center;
+        font: bold  45px/50px serif; 
+}
+
+.textLabel{
+    vertical-align: top;
+    font: bold  13px/15px sans-serif; 
+    text-transform:uppercase;
+}
+.transformDegree{
+    text-align: right;
+}
+
+.transformDegree span{
+    display:inline-block;
+    transform:translate(50%,0%) rotate(90deg);
+}
+.flexDescription, .flexButton{
+    align-self: flex-end;
+}
+.flexButton{
+        flex-basis:70px;  
+}
+
+.flexDescription .transformDegree span {
+        transform:translate(50%,100%) rotate(90deg) translate(-50%,0%);
+}
+.description{
+    font: normal  18px/26px serif;
+    opacity:0.6
+    
+}
+.subscribeBtn{
+    font: bold  14px/18px sans-serif; 
+    display:inline-block;
+    padding:25px 40px;
+    border-radius:3px;
+    background:#CFADFF;
+    color:#5200D1;
+        text-decoration:none;
+}
+.subscribeBtn:hover{
+        background:#fff;
+            color:#5200D1;
+     box-shadow: 0 15px 30px rgba(0,0,0,0.5); /* Параметры тени */
+}
+
+@media screen and (max-width: 1024px) {
+    
+        #videoBackground{
+        opacity:0.6;
+    }
+    .description{
+        opacity:1;
+    }
+    
+    .description{
+        width:70%;
+        margin:auto;
+    }
+    .flexDescription{
+        display:none;
+    }
+    .subscribeBtn{
+      width:40%;  
+    }
+    .contentFlex{
+     flex-wrap: wrap;
+    }
+    .mainContent, .flexButton{
+        padding:0;
+        text-align:center;
+    }
+     .contentFlex>.col{
+        display:none;
+}
+         .contentFlex>.col:first-child{
+             display:block;
+         }
+    .mainContent{
+    flex-grow:2;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    
+        .description{
+        width:85%;
+        margin:auto;
+    }
+        .subscribeBtn{
+      width:90%;  
+    }
+}
+
+
+.masked_text{
+    position:relative;
+    top:1.5em;
+        transition: all 0.8s ease-out ;
+}
+
+.pageload-overlay-back {
+	position: fixed;
+        z-index: 100;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+    background:#6800F2;
+}
+
+.pageload-overlay {
+	position: fixed;
+    z-index: 100;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.pageload-overlay.show {
+	visibility: visible;
+}
+
+.pageload-overlay svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pageload-overlay svg path {
+	fill: #fff;
+}
+
+.pageload-overlay::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 50%;
+	left: 50%;
+	width: 2px;
+	height: 2px;
+	margin: -1px 0 0 -1px;
+	pointer-events: none;
+	background: none;
+	animation: loaderAnim 1s ease-out infinite normal forwards;
+    border-radius:5000px;
+    border:2px solid #6800F2;
+}
+
+
+@keyframes loaderAnim {
+	to {
+		transform: scale(10);
+        opacity:0
+	}
+}
