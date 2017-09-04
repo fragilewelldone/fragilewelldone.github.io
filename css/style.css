@@ -51,9 +51,12 @@ h1{
     display:inline-block;
 }
 
+.pic-no-video{
+    display:none;
+}
 
 /* The only rule that matters */
-#videoBackground, #videoCover {
+#videoBackground,.pic-no-video, #videoCover {
 /*  making the video fullscreen  */
   position: fixed;
   right: 0; 
@@ -69,21 +72,21 @@ h1{
     z-index:-99;
 }
 @media (min-aspect-ratio: 16/9) {
-    #videoBackground, #videoCover {
+    #videoBackground,.pic-no-video, #videoCover {
         height: 300%;
         top: -100%;
     }
 }
  
 @media (max-aspect-ratio: 16/9) {
-    #videoBackground, #videoCover {
+    #videoBackground,.pic-no-video, #videoCover {
         width: 300%;
         left: -100%;
     }
 }
  
 @supports (object-fit: cover) {
-    #videoBackground, #videoCover {
+    #videoBackground,.pic-no-video, #videoCover {
         top: 0;
         left: 0;
         width: 100%;
@@ -310,6 +313,10 @@ and (orientation : portrait) {
 #videoBackground{
     display:none;
 }
+        .pic-no-video{
+    display:block;
+}
+}
 
 @media only screen 
 and (min-device-width : 414px) 
@@ -317,5 +324,8 @@ and (max-device-width : 736px)
 and (orientation : portrait) {
 #videoBackground{
     display:none;
+}
+    .pic-no-video{
+    display:block;
 }
 }
