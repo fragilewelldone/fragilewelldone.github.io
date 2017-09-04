@@ -78,12 +78,16 @@
         function videoLoading() {
         videoEl.play();
         }
-        setTimeout(videoLoading, globalDelay*3); 
         </script>
         
         <script>
-        //фейд бэкгранда
+        //загрузка
+        $(function(){
+         $(window).load(function(){
         $( "#videoCover" ).delay(globalDelay*2).fadeOut("slow");
+                     setTimeout(videoLoading, globalDelay*3); 
+              });   
+        });
         </script>
         
         	<script src="js/anime.min.js"></script>
