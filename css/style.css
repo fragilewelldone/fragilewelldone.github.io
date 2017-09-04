@@ -284,21 +284,22 @@ h1{
 	z-index: 10000;
 	top: 50%;
 	left: 50%;
-	width: 2px;
-	height: 2px;
-	margin: -1px 0 0 -1px;
+	width: 100px;
+	height: 100px;
+	margin: -50px 0 0 -50px;
 	pointer-events: none;
 	background: none;
 	animation: loaderAnim 1s ease-out infinite normal forwards;
     border-radius:5000px;
-    border:2px solid #6800F2;
+    background:#6800F2;
+    opacity:0;
 }
 
 
 @keyframes loaderAnim {
 	to {
-		transform: scale(10);
-        opacity:0
+		transform: scale(0.2);
+        opacity:1
 	}
 }
 
