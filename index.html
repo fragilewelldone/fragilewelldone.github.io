@@ -38,7 +38,7 @@
                      <p class="description">Банковские продукты теряют актуальность. Контент формируется пользователями. Экосистемы набирают популярность.</p>
                  </div>
                     <div class="col flexButton">
-                    <a id="popup-button" href="#" class="subscribeBtn"> Узнать о выходе </a>
+                    <a id="popup-button" href="http://eepurl.com/c15_Dz" class="subscribeBtn"> Узнать о выходе </a>
                     </div>
              </div>
                 </div>
@@ -133,10 +133,13 @@
         loader.hide();
         init();
                     function videoLoading() {
-                $( "#videoCover" ).fadeOut("slow");
         videoEl.play();
         }
-        setTimeout(videoLoading, globalDelay*3); 
+                               function videoLoading() {
+                $( "#videoCover" ).fadeOut("slow");
+        }
+        setTimeout(videoLoading, globalDelay*2); 
+        setTimeout(back_fade_loading, globalDelay*3); 
         $(".masked_text").css('top','0');
                             $('.pageload-overlay-back').hide();
             
