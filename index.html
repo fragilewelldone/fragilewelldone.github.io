@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Концепция Сбербанк</title>
+                  <link rel="stylesheet" type="text/css" href="css/style.css">
+                		<link rel="stylesheet" type="text/css" href="css/revealer.css" />
+        		<script>document.documentElement.className = 'js';</script>
+        		<link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+		<script src="js/snap.svg-min.js"></script>
+    </head>
+    <body>
+                <div class="pageload-overlay-back"></div>
+         <div id="pagewrap" class="container-fluid">
+             <div class="flex-container headerFlex">
+                 <div class="col">
+                     <a href="#"><img src="css/img/logo.svg" alt="designerivanov"></a>
+                 </div>
+                 <div class="col">
+                     <h1 class="counterDesign"><div class="masked_text">01</div></h1>
+                 </div>
+                 <div class="col">
+                     <p class="textLabel transformDegree"><span class="animateLine" id="rev-1">2017</span></p>
+                 </div>
+             </div>
+            <div class="flex-container contentFlex">
+                <div class="col">
+            <div class="flex-container columnFlex">
+                  <div class="col">
+                    </div>
+                
+                 <div class="col mainContent">
+                        <p class="textLabel"><span class="animateLine" id="rev-2">Скоро</span></p>
+                     <h1><div class="masked_text">FutureBank</div></h1>
+                     <p class="description">Банковские продукты теряют актуальность. Контент формируется пользователями. Экосистемы набирают популярность.</p>
+                 </div>
+                    <div class="col flexButton">
+                    <a id="popup-button" href="#" class="subscribeBtn"> Узнать о выходе </a>
+                    </div>
+             </div>
+                </div>
+                   <div class="col">
+                    </div>
+                    <div class="col">
+                    </div>
+                 <div class="col flexDescription">
+                    <p class="textLabel transformDegree"><span class="animateLine" id="rev-3">интерактивный дизайн</span></p>
+                    </div>
+             </div>
+             
+   <div id="loader" class="pageload-overlay" data-opening="M 0,0 c 0,0 63.5,-16.5 80,0 16.5,16.5 0,60 0,60 L 0,60 Z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+					<path d="M 0,0 c 0,0 -16.5,43.5 0,60 16.5,16.5 80,0 80,0 L 0,60 Z"/>
+				</svg>
+       </div>
+			</div><!-- /pageload-overlay -->
+        <img src="css/img/preview.png" id="videoCover">
+        <video muted plays-inline id="videoBackground">
+            <source src="background.webm" type="video/webm">
+        </video>
+        
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script>
+            var globalDelay=1000;
+            
+        // получаем элемент видео
+        var videoEl = document.getElementsByTagName('video')[0];videoCover
+        //залукпливаем видео со 2-ой секунды
+        videoEl.addEventListener('ended', function () {
+            videoEl.currentTime = 2.5;
+               videoEl.play();
+        }, false);
+
+        // даем задержку на воспроизведение видео 
+        function videoLoading() {
+        videoEl.play();
+        }
+        setTimeout(videoLoading, globalDelay*3); 
+        </script>
+        
+        <script>
+        //фейд бэкгранда
+        $( "#videoCover" ).delay(globalDelay*2).fadeOut("slow");
+        </script>
+        
+        	<script src="js/anime.min.js"></script>
+		<script src="js/main.js"></script>
+        <script src="js/classie.js"></script>
+		<script src="js/svgLoader.js"></script>
+		<script> 
+            //это лоадер
+			(function() {
+								var pageWrap = document.getElementById( 'pagewrap' ),
+					pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
+					loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
+                loader.show();
+                        setTimeout( function() {
+                                $('.pageload-overlay-back').hide();
+								loader.hide();
+							}, globalDelay );
+			})();
+		</script>
+        
+        <script>
+		(function() {
+            	setTimeout(init, globalDelay);
+
+			function init() {
+				//************************ Example 1 - reveal on load ********************************
+				$(".masked_text").css('top','0');
+				var rev1 = new RevealFx(document.querySelector('#rev-1'), {
+					revealSettings : {
+						bgcolor: '#ffffff',
+                        delay: 500,
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				rev1.reveal();
+                
+                	var rev2 = new RevealFx(document.querySelector('#rev-2'), {
+					revealSettings : {
+						bgcolor: '#ffffff',
+                        direction: 'bt',
+						delay: 700,
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				rev2.reveal();
+                
+                	var rev3 = new RevealFx(document.querySelector('#rev-3'), {
+					revealSettings : {
+						bgcolor: '#ffffff',
+                        direction: 'rl',
+						delay: 900,
+						onCover: function(contentEl, revealerEl) {
+							contentEl.style.opacity = 1;
+						}
+					}
+				});
+				rev3.reveal();
+                
+			}
+		})();
+		</script>
+    </body>
+</html>
