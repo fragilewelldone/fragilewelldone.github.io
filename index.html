@@ -132,8 +132,8 @@
         $(window).on('load', function () {
         loader.hide();
         init();
-        $( "#videoCover" ).delay(globalDelay*2).fadeOut("slow");
                     function videoLoading() {
+                $( "#videoCover" ).fadeOut("slow");
         videoEl.play();
         }
         setTimeout(videoLoading, globalDelay*3); 
